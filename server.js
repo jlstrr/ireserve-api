@@ -30,6 +30,10 @@ app.use(express.json());
 // Mount versioned routes
 app.use("/api", apiRoutes);
 
+app.use("/", (req, res) => {
+  res.json({ message: "iReserve API is running" });
+});
+
 app.listen(port, () =>
   console.log(`🚀 Server running on http://localhost:${port}`)
 );
